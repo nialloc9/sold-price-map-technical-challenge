@@ -63,7 +63,7 @@ export default class Container extends Component {
         }
 
         return (
-            <View datasets={this.datasets} />
+            <View datasets={this.datasets} colorMap={Container.colorMap} />
         )
     }
 }
