@@ -1,0 +1,132 @@
+[
+  {
+    "coordinates": {
+      "x": "60",
+      "y": "23"
+    },
+    "price": {
+      "currency": "$",
+      "value": "1422640"
+    },
+    "meta": {
+      "group": 2
+    }
+  },
+  {
+    "coordinates": {
+      "x": "60",
+      "y": "23"
+    },
+    "price": {
+      "currency": "$",
+      "value": "1422640"
+    },
+    "meta": {
+      "group": 2
+    }
+  },
+  {
+    "coordinates": {
+      "x": "91",
+      "y": "24"
+    },
+    "price": {
+      "currency": "$",
+      "value": "3215271"
+    },
+    "meta": {
+      "group": 3
+    }
+  },
+  {
+    "coordinates": {
+      "x": "58",
+      "y": "66"
+    },
+    "price": {
+      "currency": "$",
+      "value": "3653379"
+    },
+    "meta": {
+      "group": 3
+    }
+  },
+  {
+    "coordinates": {
+      "x": "58",
+      "y": "66"
+    },
+    "price": {
+      "currency": "$",
+      "value": "3653379"
+    },
+    "meta": {
+      "group": 3
+    }
+  },
+  {
+    "coordinates": {
+      "x": "72",
+      "y": "51"
+    },
+    "price": {
+      "currency": "$",
+      "value": "4213691"
+    },
+    "meta": {
+      "group": 3
+    }
+  },
+  {
+    "coordinates": {
+      "x": "57",
+      "y": "91"
+    },
+    "price": {
+      "currency": "$",
+      "value": "4405635"
+    },
+    "meta": {
+      "group": 3
+    }
+  },
+  {
+    "coordinates": {
+      "x": "57",
+      "y": "91"
+    },
+    "price": {
+      "currency": "$",
+      "value": "4405635"
+    },
+    "meta": {
+      "group": 4
+    }
+  },
+  {
+    "coordinates": {
+      "x": "61",
+      "y": "62"
+    },
+    "price": {
+      "currency": "$",
+      "value": "5045331"
+    },
+    "meta": {
+      "group": 4
+    }
+  },
+  {
+    "coordinates": {
+      "x": "61",
+      "y": "62"
+    },
+    "price": {
+      "currency": "$",
+      "value": "5045331"
+    },
+    "meta": {
+      "group": 5
+    }
+  }
+]
