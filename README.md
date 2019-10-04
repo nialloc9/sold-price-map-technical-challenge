@@ -31,7 +31,7 @@ An example of decoupling processing using a serverless architecture while follow
 
         $ cd ./server && npm test
 
-# Original Technical Task
+### Original Technical Task
 
 You have been given a [set of data points](/assets/sold-price-data.txt), with each item taking the following form:
 
@@ -55,7 +55,7 @@ Using this data plot each point on a grid. The points should be filled with a co
 - 75% - 95%
 - 95% - 100%
 
-## Technical specification
+#### Technical specification
 
 Your system architecture should be split between a back-end and a web front-end, for instance, providing a JSON in/out RESTful API. Feel free to use any other technologies provided that the general client/service architecture is respected.
 
@@ -111,7 +111,7 @@ Below you will find a combination of assumptions made, notes, intended client ap
 
 - As the project will only have one view I will use local state and pass that down instead of using a data store such as redux. This would be overkill for something like this. I will split the logic and view into 2. A container and a view. While inheritance could be used here I will use object composition instead as react favors it.
 
-- Data from endpoint will already be grouped and assinged a role so mapping over the data to create the UI will be simplified.
+- Data from endpoint will already be grouped and assigned a group so mapping over the data to create the UI will be simplified.
 
 - The static site will be hosted using a S3 bucket. It will be publicly available.
 
@@ -136,13 +136,14 @@ lambda distributed processing can be added to handle the transformations.
 
 - The transformer functions for manipulating the data will be abstracted into a utility file to keep code clean and make it easier to test.
 
-- After data is transformed it will be placed inside a new S3 file.
+- After data is transformed it will be placed inside a new S3 file. If transformations were to occur each time the client requests data it would have a negative impact on perfomance. Taking the approach here this is mitigated by the data being already transformed prior to reading. Also defining an application data structure ensures that if the ingressed data structure differs in the future it will only effect the ingress and not the rest of the application isolating the issue.
 
 - This new file will be read directly from. If in the future the size of this file increases a s3 file may not be optimal. Instead it could be seperated into multiple files or data could be stored in a database. Both solutions would allow the implementation of pagination.
 
 ### Intended API endpoits
 
-- Serverless architecture relying on events so no api endpoints required.
+- Serverless architecture relying on events fired in the uploading of data to S3 endpoint.
+- Client reads transformed data from JSON file in S3.
 
 ### Improvements
 
