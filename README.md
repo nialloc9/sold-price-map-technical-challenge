@@ -107,6 +107,11 @@ Below you will find a combination of assumptions made, notes, intended client ap
     <img src="https://raw.githubusercontent.com/nialloc9/sold-price-map-technical-challenge/master/assets/architecture.png" alt='architecture diagram' width="400">
 </p>
 
+- Costs can be kept to a minimum by following a serverless pattern. AWS lambdas scale to 0 only incurring a charge each time a new file is uploaded to S3. Lambda free tier allow 1,000,000 free requests per month and S3 charge $0.023/GB per month so total cost for this application would be as close to 0 as possible.
+- Instead of processing the data each time it's requested a much faster and more scalable solution is to only transform it once (on upload) and then make it available via S3 to the application. This is also much cheaper.
+- By not making the lambdas available to the public the attack surface is reduced. 
+- Original data is secured and only data pre approved is made available to the front end application.
+
 ### Intended approach Client
 
 - As the project will only have one view I will use local state and pass that down instead of using a data store such as redux. This would be overkill for something like this. I will split the logic and view into 2. A container and a view. While inheritance could be used here I will use object composition instead as react favors it.
@@ -154,3 +159,4 @@ lambda distributed processing can be added to handle the transformations.
 - Distributed processing (such as hadoop) could be used to handle data transformations but this is currently overkill and expensive.
 - If routing to differant data was required an api gateway could be used.
 - A CI/CD (such as circle ci) to update lambda based on whether master has changed. Example of this can be found on my website [here](https://twentyfirstcenturycode.com/cloud-computing/circle-ci-with-s3-and-cloudfront). 
+- Error handling could be applied if data is in incorrect format. This would need to be discussed with the relevant stakeholders. For example, should malformed data be ignored?

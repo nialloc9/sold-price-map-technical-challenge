@@ -77,7 +77,7 @@ module.exports.extractLoadUpload = async () => {
 module.exports.fetchData = async () => {
 
   const data = await loadFromS3(config.aws.s3.egressBucket, config.aws.s3.egressKey);
-console.log("data", data)
+
   return {
     statusCode: 200,
     body: JSON.stringify(
